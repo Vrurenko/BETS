@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="jsp-api">
+    <CLASSES>
+      <root url="jar://D:/ApacheTomcat8.0/lib/jsp-api.jar!/" />
+      <root url="jar://D:/ApacheTomcat8.0/lib/servlet-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mysql-connector-java-5.1.39-bin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/log4j-1.2.17.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/activation-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javamail-1.4.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/smtp-1.4.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
