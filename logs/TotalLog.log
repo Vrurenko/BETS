@@ -21,4 +21,3 @@
 2016-08-02 12:30:31 INFO  Controller:77 - Redirected to /client.jsp
 2016-08-02 12:30:39 INFO  Controller:64 - There was a class commands.CommandLogOut instance returned
 2016-08-02 12:30:39 INFO  CommandLogOut:24 - Viacheslav`s session was interrupted
-2016-08-02 12:30:39 INFO  Controller:82 - Forwarded to /login.jsp
