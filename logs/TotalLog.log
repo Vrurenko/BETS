@@ -431,3 +431,58 @@
 2016-08-10 17:11:00 INFO  Controller:64 - There was a class commands.CommandLogOut instance returned
 2016-08-10 17:11:00 INFO  CommandLogOut:25 - Viacheslav`s session was interrupted
 2016-08-10 17:11:00 INFO  Controller:81 - Forwarded to /login.jsp
+2016-08-10 17:28:45 INFO  Controller:64 - There was a class commands.CommandMissing instance returned
+2016-08-10 17:28:45 INFO  CommandMissing:17 - There is unknown command for servlet. Redirected to login page
+2016-08-10 17:28:45 INFO  Controller:77 - Redirected to /login.jsp
+2016-08-10 17:28:47 INFO  Controller:64 - There was a class commands.CommandMissing instance returned
+2016-08-10 17:28:47 INFO  CommandMissing:17 - There is unknown command for servlet. Redirected to login page
+2016-08-10 17:28:47 INFO  Controller:77 - Redirected to /login.jsp
+2016-08-10 17:28:49 INFO  Controller:64 - There was a class commands.CommandToRegistration instance returned
+2016-08-10 17:28:49 INFO  Controller:77 - Redirected to /registration.jsp
+2016-08-10 17:28:57 INFO  Controller:64 - There was a class commands.CommandRegistration instance returned
+2016-08-10 17:28:57 INFO  CommandRegistration:30 - User ewre was successfully added
+2016-08-10 17:28:57 INFO  Controller:77 - Redirected to /client.jsp
+2016-08-10 17:29:02 INFO  Controller:64 - There was a class commands.CommandLogOut instance returned
+2016-08-10 17:29:02 INFO  CommandLogOut:25 - ewre`s session was interrupted
+2016-08-10 17:29:02 INFO  Controller:81 - Forwarded to /login.jsp
+2016-08-10 17:29:18 INFO  Controller:64 - There was a class commands.CommandLogin instance returned
+2016-08-10 17:29:18 INFO  CommandLogin:30 - The user Viacheslav has been successfully authorized
+2016-08-10 17:29:18 INFO  Controller:77 - Redirected to /client.jsp
+2016-08-10 17:29:20 INFO  Controller:64 - There was a class commands.CommandLogOut instance returned
+2016-08-10 17:29:20 INFO  CommandLogOut:25 - Viacheslav`s session was interrupted
+2016-08-10 17:29:20 INFO  Controller:81 - Forwarded to /login.jsp
+2016-08-10 17:30:18 INFO  Controller:64 - There was a class commands.CommandMissing instance returned
+2016-08-10 17:30:18 INFO  CommandMissing:17 - There is unknown command for servlet. Redirected to login page
+2016-08-10 17:30:18 INFO  Controller:77 - Redirected to /login.jsp
+2016-08-10 17:30:20 INFO  Controller:64 - There was a class commands.CommandMissing instance returned
+2016-08-10 17:30:20 INFO  CommandMissing:17 - There is unknown command for servlet. Redirected to login page
+2016-08-10 17:30:20 INFO  Controller:77 - Redirected to /login.jsp
+2016-08-10 17:30:22 INFO  Controller:64 - There was a class commands.CommandToRegistration instance returned
+2016-08-10 17:30:22 INFO  Controller:77 - Redirected to /registration.jsp
+2016-08-10 17:30:30 INFO  Controller:64 - There was a class commands.CommandRegistration instance returned
+2016-08-10 17:30:30 INFO  CommandRegistration:30 - User 12312 was successfully added
+2016-08-10 17:30:30 INFO  Controller:77 - Redirected to /client.jsp
+2016-08-10 17:30:33 INFO  Controller:64 - There was a class commands.CommandLogOut instance returned
+2016-08-10 17:30:33 INFO  CommandLogOut:25 - 12312`s session was interrupted
+2016-08-10 17:30:33 INFO  Controller:81 - Forwarded to /login.jsp
+2016-08-10 17:30:42 INFO  Controller:64 - There was a class commands.CommandLogin instance returned
+2016-08-10 17:30:42 INFO  CommandLogin:30 - The user Viacheslav has been successfully authorized
+2016-08-10 17:30:42 INFO  Controller:77 - Redirected to /client.jsp
+2016-08-10 17:30:44 INFO  Controller:64 - There was a class commands.CommandLogOut instance returned
+2016-08-10 17:30:44 INFO  CommandLogOut:25 - Viacheslav`s session was interrupted
+2016-08-10 17:30:44 INFO  Controller:81 - Forwarded to /login.jsp
+2016-08-10 17:32:19 INFO  Controller:64 - There was a class commands.CommandMissing instance returned
+2016-08-10 17:32:19 INFO  CommandMissing:17 - There is unknown command for servlet. Redirected to login page
+2016-08-10 17:32:19 INFO  Controller:77 - Redirected to /login.jsp
+2016-08-10 17:32:22 INFO  Controller:64 - There was a class commands.CommandMissing instance returned
+2016-08-10 17:32:22 INFO  CommandMissing:17 - There is unknown command for servlet. Redirected to login page
+2016-08-10 17:32:22 INFO  Controller:77 - Redirected to /login.jsp
+2016-08-10 17:32:28 INFO  Controller:64 - There was a class commands.CommandLogin instance returned
+2016-08-10 17:32:29 INFO  CommandLogin:30 - The user Viacheslav has been successfully authorized
+2016-08-10 17:32:29 INFO  Controller:77 - Redirected to /client.jsp
+2016-08-10 17:32:50 INFO  Controller:64 - There was a class commands.CommandAddBet instance returned
+2016-08-10 17:32:50 INFO  CommandAddBet:41 - The bet was made by Viacheslav
+2016-08-10 17:32:50 INFO  Controller:77 - Redirected to /client.jsp
+2016-08-10 17:32:59 INFO  Controller:64 - There was a class commands.CommandLogOut instance returned
+2016-08-10 17:32:59 INFO  CommandLogOut:25 - Viacheslav`s session was interrupted
+2016-08-10 17:32:59 INFO  Controller:81 - Forwarded to /login.jsp

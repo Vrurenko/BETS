@@ -5,7 +5,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.Enumeration;
 
 public class NoCacheFilter implements Filter {
     private FilterConfig filterConfig;
@@ -30,9 +29,8 @@ public class NoCacheFilter implements Filter {
 
         boolean loggedIn = session != null && session.getAttribute("user") != null;
         boolean loginRequest = request.getRequestURI().equals(loginURI);
-        boolean toRegistration = "toRegistration".equals(request.getParameter("command"));
 
-        if (loggedIn || loginRequest || toRegistration) {
+        if (loggedIn || loginRequest) {
             filterChain.doFilter(request, response);
         } else {
             response.sendRedirect(loginURI);
