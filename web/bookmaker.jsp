@@ -59,15 +59,15 @@
                         <input type="hidden" name="command" value ="setMultiplier"/>
 
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="id"><fmt:message key="bookmaker.race"/></label>
-                            <div class="col-sm-10">
+                            <label class="control-label col-sm-3" for="id"><fmt:message key="bookmaker.race"/></label>
+                            <div class="col-sm-9">
                                 <input type="text" name="id" id="id" required pattern="^[0-9]+$" autocomplete="off"  class="form-control">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="multiplier"><fmt:message key="bookmaker.multiplier"/></label>
-                            <div class="col-sm-10">
+                            <label class="control-label col-sm-3" for="multiplier"><fmt:message key="bookmaker.multiplier"/></label>
+                            <div class="col-sm-9">
                                 <input type="text" name="multiplier" id="multiplier" required pattern="\d+(\.\d{0-2})?" autocomplete="off"  class="form-control">
                             </div>
                         </div>

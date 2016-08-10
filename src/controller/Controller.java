@@ -73,18 +73,13 @@ public class Controller extends HttpServlet {
 
         if (request.getSession(false) != null
                 && "do".equals(request.getSession(false).getAttribute("send"))){
-            System.out.println("sendRedirect");//todo
-            logger.info("Redirected to " + page);
             response.sendRedirect(page);
+            logger.info("Redirected to " + page);
         } else {
-            System.out.println("Forward");//todo
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
-            logger.info("Forwarded to " + page);
             dispatcher.forward(request,response);
+            logger.info("Forwarded to " + page);
         }
-
-
-
 
     }
 }

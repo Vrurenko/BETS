@@ -65,15 +65,15 @@
                                       <input type="hidden" name="command" value ="setWinner"/>
 
                                       <div class="form-group">
-                                          <label class="control-label col-sm-2" for="race"><fmt:message key="admin.race"/></label>
-                                          <div class="col-sm-10">
+                                          <label class="control-label col-sm-3" for="race"><fmt:message key="admin.race"/></label>
+                                          <div class="col-sm-9">
                                               <input type="number" name="race" id="race" required min="1" autocomplete="off"  class="form-control">
                                           </div>
                                       </div>
 
                                       <div class="form-group">
-                                          <label class="control-label col-sm-2" for="winner"><fmt:message key="admin.winner"/></label>
-                                          <div class="col-sm-10">
+                                          <label class="control-label col-sm-3" for="winner"><fmt:message key="admin.winner"/></label>
+                                          <div class="col-sm-9">
                                               <input type="text" name="winner" id="winner" required pattern="[0-9]{2}" class="form-control">
                                           </div>
                                       </div>
@@ -91,15 +91,15 @@
                                   <input type="hidden" name="command" value ="addRace"/>
 
                                   <div class="form-group">
-                                      <label class="control-label col-sm-2" for="admin"><fmt:message key="admin.admin"/></label>
-                                      <div class="col-sm-10">
+                                      <label class="control-label col-sm-3" for="admin"><fmt:message key="admin.admin"/></label>
+                                      <div class="col-sm-9">
                                           <input type="text" name="admin" id="admin" required autocomplete="off"  class="form-control">
                                       </div>
                                   </div>
 
                                   <div class="form-group">
-                                      <label class="control-label col-sm-2" for="bookmaker"><fmt:message key="admin.bookmaker"/></label>
-                                      <div class="col-sm-10">
+                                      <label class="control-label col-sm-3" for="bookmaker"><fmt:message key="admin.bookmaker"/></label>
+                                      <div class="col-sm-9">
                                           <input type="text" name="bookmaker" id="bookmaker" required autocomplete="off"  class="form-control">
                                       </div>
                                   </div>
@@ -115,7 +115,7 @@
                   </div>
                   <div class="col-md-6">
                       <div class="panel panel-default">
-                          <div class="panel-heading"><fmt:message key="admin.raceslist"/></div>
+                          <div class="panel-heading"><h3 class="text-center"><fmt:message key="admin.raceslist"/></h3></div>
 
                           <table class="table table-hover">
                               <th>ID</th>

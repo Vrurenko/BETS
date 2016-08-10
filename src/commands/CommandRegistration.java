@@ -34,7 +34,9 @@ public class CommandRegistration implements ICommand {
                 session.setAttribute("send","do");
 
                 if (usertype.equals(AbstractDAOFactory.getDAOFactory().getUserTypeDAO().getTypeById(1))){
+                    session.setAttribute("bets",AbstractDAOFactory.getDAOFactory().getBetDAO().getBetsByUser(login));
                     session.setAttribute("balance",AbstractDAOFactory.getDAOFactory().getUserDAO().getBalanceByLogin(login));
+                    session.setAttribute("races",AbstractDAOFactory.getDAOFactory().getRaceDAO().getAllRaces());
                     page = Config.getInstance().getProperty(Config.CLIENT);
                 }
                 if (usertype.equals(AbstractDAOFactory.getDAOFactory().getUserTypeDAO().getTypeById(2))){
