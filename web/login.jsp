@@ -60,11 +60,9 @@
                 </div>
 
                 <div class="form-group">
-
                     <div class="col-sm-offset-10">
                         <input class="btn btn-primary" type ="submit" value=<fmt:message key="login.button.submit"/>>
                     </div>
-
                 </div>
 
             </form>
