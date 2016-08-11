@@ -17,7 +17,13 @@ public class UserDAO implements IUserDAO {
     private ConnectionPool connectionPool = ConnectionPool.getInstance();
     private static final Logger logger = Logger.getLogger(UserDAO.class);
 
-
+    /**
+     * Checks user in the database according to his login and password
+     * @param login user login
+     * @param password user password
+     * @return boolean value true or false
+     * @throws SQLException
+     */
     @Override
     public boolean checkUserByLoginAndPassword(String login, String password) throws SQLException {
         Boolean result = false;
@@ -36,6 +42,11 @@ public class UserDAO implements IUserDAO {
         return result;
     }
 
+    /**
+     * Checks user in the database with the specified login
+     * @param login user login
+     * @return boolean value true or false
+     */
     @Override
     public boolean checkUserByLogin(String login) {
         Boolean result = false;
@@ -53,6 +64,14 @@ public class UserDAO implements IUserDAO {
         return result;
     }
 
+    /**
+     * Adds new user to the database
+     * @param userName String value of user nickname
+     * @param password String value of user password
+     * @param userType String value of user type
+     * @return True value in case of successfully addition, else False
+     * @throws SQLException
+     */
     @Override
     public boolean addUser(String userName, String password, String userType) throws SQLException{
         boolean result = AbstractDAOFactory.getDAOFactory().getUserDAO().checkUserByLogin(userName);
@@ -78,7 +97,11 @@ public class UserDAO implements IUserDAO {
     }
 
 
-
+    /**
+     * Returns primary key of DB record? that contains the specified user login
+     * @param login String value of user login
+     * @return integer value of primary key
+     */
     @Override
     public int getIdByLogin(String login) {
         int id = -1;
@@ -98,6 +121,11 @@ public class UserDAO implements IUserDAO {
         return id;
     }
 
+    /**
+     * Returns the user login according to the specified primary key
+     * @param id Integer value of primary key
+     * @return String value of user login
+     */
     @Override
     public String getLoginById(int id) {
         String login = null;
@@ -117,6 +145,11 @@ public class UserDAO implements IUserDAO {
         return login;
     }
 
+    /**
+     * Returns the user balance
+     * @param login String value of user login
+     * @return Double value of user balance
+     */
     @Override
     public double getBalanceByLogin(String login) {
         double balance = -1;
@@ -136,6 +169,12 @@ public class UserDAO implements IUserDAO {
         return balance;
     }
 
+    /**
+     * Increases the user's balance for the specified amount
+     * @param login String value of user login
+     * @param amount Double value of amount to increase
+     * @return True value in case of successfully increase, else False
+     */
     @Override
     public boolean addBalanceByLogin(String login, double amount) {
         boolean result = false;
@@ -152,10 +191,15 @@ public class UserDAO implements IUserDAO {
         } finally {
             connectionPool.releaseConnection(connection);
         }
-
         return  result;
     }
 
+    /**
+     * Checks user for bookmaker role
+     * @param login String value of user login
+     * @return boolean value true or false
+     * @throws SQLException
+     */
     @Override
     public boolean isBookmaker(String login) throws SQLException {
         return AbstractDAOFactory.getDAOFactory().getUserDAO().checkUserByLogin(login)
@@ -163,6 +207,12 @@ public class UserDAO implements IUserDAO {
                 .equals(AbstractDAOFactory.getDAOFactory().getUserTypeDAO().getTypeById(3));
     }
 
+    /**
+     * Checks user for administrator role
+     * @param login String value of user login
+     * @return boolean value true or false
+     * @throws SQLException
+     */
     @Override
     public boolean isAdmin(String login) throws SQLException {
         return AbstractDAOFactory.getDAOFactory().getUserDAO().checkUserByLogin(login)

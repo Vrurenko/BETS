@@ -1,6 +1,5 @@
 package dao.entity;
 
-
 import beans.Race;
 import dao.AbstractDAOFactory;
 import dao.ConnectionPool;
@@ -14,7 +13,6 @@ import java.sql.Statement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-
 public class RaceDAO implements IRaceDAO {
     private static Connection connection;
     private static Statement statement;
@@ -23,7 +21,10 @@ public class RaceDAO implements IRaceDAO {
     private ConnectionPool connectionPool = ConnectionPool.getInstance();
     private static final Logger logger = Logger.getLogger(RaceDAO.class);
 
-
+    /**
+     * Returns the list of all races
+     * @return List of races
+     */
     @Override
     public ArrayList<Race> getAllRaces() {
         ArrayList<Race> list = new ArrayList<>();
@@ -54,6 +55,12 @@ public class RaceDAO implements IRaceDAO {
         return list;
     }
 
+    /**
+     * Set race multiplier
+     * @param id Integer value of race identifier
+     * @param multiplier Double value of multiplier
+     * @return True value in case of successfully update, else False
+     */
     @Override
     public boolean setMultiplier(int id, double multiplier) {
         boolean result = false;
@@ -73,6 +80,13 @@ public class RaceDAO implements IRaceDAO {
         return  result;
     }
 
+    /**
+     * Set the race winner, changes the states of bets for current race,
+     * changes the users balances according to the bets results
+     * @param id Integer value of race identifier
+     * @param winner Integer value of race winner
+     * @return True value in case of successfully update, else False
+     */
     @Override
     public boolean setWinner(int id, int winner) {
         boolean result = false;
@@ -112,6 +126,11 @@ public class RaceDAO implements IRaceDAO {
         return  result;
     }
 
+    /**
+     * Returns the race multiplier by the race identifier
+     * @param id Integer value of race primary key
+     * @return Double value of race multiplier
+     */
     @Override
     public double getMultiplierByRaceID(int id) {
         double multiplier = 0;
@@ -131,6 +150,12 @@ public class RaceDAO implements IRaceDAO {
         return multiplier;
     }
 
+    /**
+     * Adds new race with specified parameters
+     * @param bookmaker String value of race bookmaker login
+     * @param admin String value of race administrator login
+     * @return True value in case of successfully addition, else False
+     */
     @Override
     public boolean addRace(String bookmaker, String admin) {
         boolean result = false;
@@ -149,6 +174,11 @@ public class RaceDAO implements IRaceDAO {
         return result;
     }
 
+    /**
+     * Returns the race administrator
+     * @param id Integer value of race primary key
+     * @return User name of race administrator
+     */
     @Override
     public String getRaceAdmin(int id) {
         String admin = null;
@@ -169,6 +199,11 @@ public class RaceDAO implements IRaceDAO {
         return admin;
     }
 
+    /**
+     * Returns the race bookmaker
+     * @param id Integer value of race primary key
+     * @return User name of race bookmaker
+     */
     @Override
     public String getRaceBookmaker(int id) {
         String bookmaker = null;

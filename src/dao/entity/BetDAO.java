@@ -18,7 +18,11 @@ public class BetDAO implements IBetDAO {
     private ConnectionPool connectionPool = ConnectionPool.getInstance();
     private static final Logger logger = Logger.getLogger(BetDAO.class);
 
-
+    /**
+     * Returns the list of user bets
+     * @param user String value of user login
+     * @return ArrayList of user bets
+     */
     @Override
     public ArrayList<Bet> getBetsByUser(String user) {
         ArrayList<Bet> list = new ArrayList<>();
@@ -48,6 +52,14 @@ public class BetDAO implements IBetDAO {
         return list;
     }
 
+    /**
+     * Adda new bet with specified parameters
+     * @param client String value of client login
+     * @param race Integer value of race number
+     * @param rider Integer value of rider number
+     * @param amount Double value of bet amount
+     * @return True in case of successfully addition
+     */
     @Override
     public boolean addBet(String client, int race, int rider, double amount) {
         Boolean result = false;
@@ -68,6 +80,12 @@ public class BetDAO implements IBetDAO {
         return result;
     }
 
+    /**
+     * Set the bet result according to bet identifier
+     * @param id Integer value of bet primary key
+     * @param result Boolean value of bet result
+     * @return True value in case of successfully update
+     */
     @Override
     public boolean setBetResultByID(int id, boolean result){
         boolean answer = false;

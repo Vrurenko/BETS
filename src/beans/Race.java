@@ -2,9 +2,6 @@ package beans;
 
 import java.io.Serializable;
 
-/**
- * Created by Comandante on 19.06.2016.
- */
 public class Race implements Serializable {
 
     private int id;

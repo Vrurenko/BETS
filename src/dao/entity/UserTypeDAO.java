@@ -16,7 +16,11 @@ public class UserTypeDAO implements IUserTypeDAO {
     private ConnectionPool connectionPool = ConnectionPool.getInstance();
     private static final Logger logger = Logger.getLogger(UserTypeDAO.class);
 
-
+    /**
+     * Returns user type by identifier
+     * @param id Integer value of user type primary key
+     * @return String value of user type
+     */
     @Override
     public String getTypeById(int id)  {
         String type = null;
@@ -33,10 +37,15 @@ public class UserTypeDAO implements IUserTypeDAO {
         } finally {
             connectionPool.releaseConnection(connection);
         }
-
     return type;
     }
 
+    /**
+     * Returns unique identifier of user type
+     * @param type String value of user type
+     * @return Integer value of user type identifier
+     * @throws SQLException
+     */
     @Override
     public int getIdByType(String type) throws SQLException {
         int id = -1;
@@ -56,6 +65,12 @@ public class UserTypeDAO implements IUserTypeDAO {
         return id;
     }
 
+    /**
+     * Returns user type according to the user login
+     * @param login String value of user login
+     * @return String value of user type
+     * @throws SQLException
+     */
     @Override
     public String getTypeByLogin(String login) throws SQLException {
         String type = null;

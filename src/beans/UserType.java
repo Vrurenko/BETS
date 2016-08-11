@@ -2,9 +2,6 @@ package beans;
 
 import java.io.Serializable;
 
-/**
- * Created by Comandante on 05.07.2016.
- */
 public class UserType implements Serializable{
     private int id;
     private String type;
