@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <c:set var="language" value="${not empty param.language ? param.language : not empty language ? language : sessionScope.language}" scope="session" />
-<fmt:setLocale value="${language}" /><fmt:setBundle basename="dictionaries.text"/>
+<fmt:setLocale value="${language}" /><fmt:setBundle basename="dictionaries.lang"/>
 
 <!DOCTYPE html>
 <html lang="${language}">

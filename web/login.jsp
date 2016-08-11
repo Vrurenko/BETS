@@ -4,7 +4,7 @@
 <c:set var="language" value="${not empty param.language ? param.language : not empty language ?  language : 'en'}" scope="session" />
 <fmt:requestEncoding value="utf-8" />
 <fmt:setLocale value="${sessionScope.language}" />
-<fmt:setBundle basename="dictionaries.text"/>
+<fmt:setBundle basename="dictionaries.lang"/>
 
 <!DOCTYPE html>
 <html lang="${language}">

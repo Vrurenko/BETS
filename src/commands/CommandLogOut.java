@@ -21,6 +21,7 @@ public class CommandLogOut implements ICommand {
         String user = (String) session.getAttribute("user");
         session.removeAttribute("user");
         session.removeAttribute("usertype");
+        session.removeAttribute("language");
         session.invalidate();
         logger.info(user + "`s session was interrupted");
         return  page;

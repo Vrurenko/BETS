@@ -6,7 +6,7 @@ public class Config {
 
     private static Config instance;
     private ResourceBundle resource;
-    private static final String BUNDLE_NAME = "manager.config";
+    private static final String BUNDLE_NAME = "config";
     public static final String CLIENT = "CLIENT";
     public static final String ADMIN = "ADMIN";
     public static final String BOOKMAKER = "BOOKMAKER";
