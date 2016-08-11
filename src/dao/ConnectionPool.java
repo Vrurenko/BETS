@@ -18,7 +18,7 @@ public class ConnectionPool {
 
 
     static {
-        ResourceBundle resourceBundle = ResourceBundle.getBundle("dao.properties.database");
+        ResourceBundle resourceBundle = ResourceBundle.getBundle("database");
         url = resourceBundle.getString("url");
         user = resourceBundle.getString("user");
         password = resourceBundle.getString("password");
