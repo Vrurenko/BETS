@@ -4,7 +4,7 @@
 <c:set var="language" value="${not empty param.language ? param.language : not empty language ? language : sessionScope.language}" scope="session" />
 <fmt:setLocale value="${language}" />
 <fmt:setBundle basename="dictionaries.lang"/>
-<%@ taglib uri= "/WEB-INF/hello.tld" prefix="own" %>
+<%@ taglib uri= "/WEB-INF/today.tld" prefix="ct" %>
 
 
 <!DOCTYPE html>
@@ -32,18 +32,17 @@
 		</div>
 	</nav>
 	<div class="jumbotron">
+		<ct:today format="dd MMMM, yyyy" language="${language}"/>
 		<%
 			if (request.getAttribute("error") != null){
 		%>
 		<h1 class="text-center">
-			<own:hello name="user"/>
 			<fmt:message key="error.text.error"/>
 		</h1>
 		<%
 		} else {
 		%>
 		<h1 class="text-center">
-			<own:hello name="user"/>
 			<fmt:message key="error.text.unknown"/>
 		</h1>
 		<%
