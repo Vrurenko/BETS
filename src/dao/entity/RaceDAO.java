@@ -224,6 +224,11 @@ public class RaceDAO implements IRaceDAO {
         return bookmaker;
     }
 
+    /**
+     * Checks race for the winner existence
+     * @param id Integer value of race identifier
+     * @return True value in case of winner existence, else False
+     */
     @Override
     public boolean hasWinner(int id){
         boolean result = true;
@@ -246,6 +251,11 @@ public class RaceDAO implements IRaceDAO {
         return result;
     }
 
+    /**
+     * Checks race for the existence by means of race id
+     * @param id Integer value of race identifier
+     * @return True value in case of race existence, else False
+     */
     @Override
     public boolean doesExist(int id){
         boolean result = false;

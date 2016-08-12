@@ -17,7 +17,7 @@ public class CommandAddBet implements ICommand {
     private static final Logger logger = Logger.getLogger(CommandAddBet.class);
 
     /**
-     * Adds a new bet to DB and putting the updated all bets list into request
+     * Adds a new bet to DB and puts the updated all bets list into request
      * @param request
      * @param response
      * @return page to forward
