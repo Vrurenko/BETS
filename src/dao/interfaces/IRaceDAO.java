@@ -14,4 +14,5 @@ public interface IRaceDAO {
     String getRaceBookmaker(int id);
     boolean hasWinner(int id);
     boolean doesExist(int id);
+    boolean hasMultiplier(int id);
 }

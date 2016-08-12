@@ -276,4 +276,25 @@ public class RaceDAO implements IRaceDAO {
         return result;
     }
 
+    @Override
+    public boolean hasMultiplier(int id){
+        boolean result = true;
+        try{
+            connection = connectionPool.getConnection();
+            preparedStatement = connection.prepareStatement("SELECT multiplier FROM race WHERE id = ?");
+            preparedStatement.setInt(1,id);
+            preparedStatement.execute();
+            resultSet = preparedStatement.executeQuery();
+            resultSet.next();
+            resultSet.getInt("multiplier");
+            if (resultSet.wasNull()){
+                result = false;
+            }
+        } catch (SQLException e){
+            e.printStackTrace();
+        } finally {
+            connectionPool.releaseConnection(connection);
+        }
+        return result;
+    }
 }

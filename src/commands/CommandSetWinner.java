@@ -17,16 +17,17 @@ public class CommandSetWinner implements ICommand {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String page = Config.getInstance().getProperty(Config.ADMIN);
-        String id = request.getParameter("race");
-        String winner = request.getParameter("winner");
+        int id = Integer.parseInt(request.getParameter("race"));
+        int winner = Integer.parseInt(request.getParameter("winner"));
         String user = (String) request.getSession(false).getAttribute("user");
         HttpSession session = request.getSession(false);
 
         try {
-            if (Integer.parseInt(id) > 0
-                    && Integer.parseInt(winner) > 0
-                    && user.equals(AbstractDAOFactory.getDAOFactory().getRaceDAO().getRaceAdmin(Integer.parseInt(id)))) {
-                AbstractDAOFactory.getDAOFactory().getRaceDAO().setWinner(Integer.parseInt(id), Integer.parseInt(winner));
+            if (AbstractDAOFactory.getDAOFactory().getRaceDAO().doesExist(id)
+                    && AbstractDAOFactory.getDAOFactory().getRaceDAO().hasMultiplier(id)
+                    && !AbstractDAOFactory.getDAOFactory().getRaceDAO().hasWinner(id)
+                    && user.equals(AbstractDAOFactory.getDAOFactory().getRaceDAO().getRaceAdmin(id))) {
+                AbstractDAOFactory.getDAOFactory().getRaceDAO().setWinner(id, winner);
                 session.setAttribute("send", "do");
                 logger.info("Winner " + winner + " was successfully announced");
             }
