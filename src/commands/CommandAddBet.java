@@ -35,7 +35,9 @@ public class CommandAddBet implements ICommand {
             int rider = Integer.parseInt(request.getParameter("rider"));
             double amount = Double.parseDouble(request.getParameter("amount"));
 
-            if (AbstractDAOFactory.getDAOFactory().getUserDAO().getBalanceByLogin(login) >= amount){
+            if (AbstractDAOFactory.getDAOFactory().getRaceDAO().doesExist(race)
+                    && !AbstractDAOFactory.getDAOFactory().getRaceDAO().hasWinner(race)
+                    && AbstractDAOFactory.getDAOFactory().getUserDAO().getBalanceByLogin(login) >= amount){
                 AbstractDAOFactory.getDAOFactory().getBetDAO().addBet(login,race,rider,amount);
                 session.setAttribute("send","do");
                 logger.info("The bet was made by " + login);

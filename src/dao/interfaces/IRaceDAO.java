@@ -12,4 +12,6 @@ public interface IRaceDAO {
     boolean addRace(String bookmaker, String admin);
     String getRaceAdmin(int id);
     String getRaceBookmaker(int id);
+    boolean hasWinner(int id);
+    boolean doesExist(int id);
 }

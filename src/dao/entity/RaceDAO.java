@@ -224,4 +224,46 @@ public class RaceDAO implements IRaceDAO {
         return bookmaker;
     }
 
+    @Override
+    public boolean hasWinner(int id){
+        boolean result = true;
+        try{
+            connection = connectionPool.getConnection();
+            preparedStatement = connection.prepareStatement("SELECT winner FROM race WHERE id = ?");
+            preparedStatement.setInt(1,id);
+            preparedStatement.execute();
+            resultSet = preparedStatement.executeQuery();
+            resultSet.next();
+            resultSet.getInt("winner");
+            if (resultSet.wasNull()){
+                result = false;
+            }
+        } catch (SQLException e){
+            e.printStackTrace();
+        } finally {
+            connectionPool.releaseConnection(connection);
+        }
+        return result;
+    }
+
+    @Override
+    public boolean doesExist(int id){
+        boolean result = false;
+        try{
+            connection = connectionPool.getConnection();
+            preparedStatement = connection.prepareStatement("SELECT * FROM race WHERE id = ?");
+            preparedStatement.setInt(1,id);
+            preparedStatement.execute();
+            resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()){
+                result = true;
+            }
+        } catch (SQLException e){
+            e.printStackTrace();
+        } finally {
+            connectionPool.releaseConnection(connection);
+        }
+        return result;
+    }
+
 }

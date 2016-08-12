@@ -667,3 +667,37 @@
 2016-08-11 21:41:39 INFO  Controller:75 - Redirected to /login.jsp
 2016-08-11 21:41:43 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
 2016-08-11 21:41:43 INFO  Controller:75 - Redirected to /error.jsp
+2016-08-11 22:17:17 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
+2016-08-11 22:17:18 INFO  Controller:79 - Forwarded to /error.jsp
+2016-08-11 22:17:28 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
+2016-08-11 22:17:28 INFO  CommandLogin:30 - The user Viacheslav has been successfully authorized
+2016-08-11 22:17:28 INFO  Controller:75 - Redirected to /client.jsp
+2016-08-11 22:18:03 INFO  Controller:62 - There was a class commands.CommandAddBet instance returned
+2016-08-11 22:18:03 INFO  CommandAddBet:42 - The bet was made by Viacheslav
+2016-08-11 22:18:03 INFO  Controller:75 - Redirected to /client.jsp
+2016-08-11 22:46:54 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
+2016-08-11 22:46:55 INFO  CommandLogin:30 - The user Viacheslav has been successfully authorized
+2016-08-11 22:46:55 INFO  Controller:75 - Redirected to /client.jsp
+2016-08-11 22:47:14 INFO  Controller:62 - There was a class commands.CommandAddBet instance returned
+2016-08-11 22:47:14 INFO  Controller:75 - Redirected to /client.jsp
+2016-08-12 14:19:40 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
+2016-08-12 14:19:41 INFO  Controller:79 - Forwarded to /error.jsp
+2016-08-12 14:19:48 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
+2016-08-12 14:19:48 INFO  CommandLogin:30 - The user Viacheslav has been successfully authorized
+2016-08-12 14:19:48 INFO  Controller:75 - Redirected to /client.jsp
+2016-08-12 14:20:05 INFO  Controller:62 - There was a class commands.CommandAddBet instance returned
+2016-08-12 14:20:05 INFO  Controller:75 - Redirected to /client.jsp
+2016-08-12 14:20:51 INFO  Controller:62 - There was a class commands.CommandAddBet instance returned
+2016-08-12 14:20:51 INFO  Controller:75 - Redirected to /client.jsp
+2016-08-12 14:21:00 INFO  Controller:62 - There was a class commands.CommandLogOut instance returned
+2016-08-12 14:21:00 INFO  CommandLogOut:26 - Viacheslav`s session was interrupted
+2016-08-12 14:21:00 INFO  Controller:79 - Forwarded to /login.jsp
+2016-08-12 14:21:18 INFO  Controller:62 - There was a class commands.CommandToRegistration instance returned
+2016-08-12 14:21:18 INFO  Controller:75 - Redirected to /registration.jsp
+2016-08-12 14:21:26 INFO  Controller:62 - There was a class commands.CommandRegistration instance returned
+2016-08-12 14:21:26 INFO  Controller:75 - Redirected to /registration.jsp
+2016-08-12 14:21:36 INFO  Controller:62 - There was a class commands.CommandRegistration instance returned
+2016-08-12 14:21:36 INFO  CommandRegistration:30 - User 1233333 was successfully added
+2016-08-12 14:21:36 INFO  Controller:75 - Redirected to /client.jsp
+2016-08-12 14:21:44 INFO  Controller:62 - There was a class commands.CommandAddBet instance returned
+2016-08-12 14:21:44 INFO  Controller:75 - Redirected to /client.jsp
