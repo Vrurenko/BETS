@@ -15,7 +15,7 @@ public class CommandToRegistration implements ICommand {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession(false);
-        session.setAttribute("send","do");
+        session.setAttribute("send", "do");
         return Config.getInstance().getProperty(Config.REGISTRATION);
     }
 }

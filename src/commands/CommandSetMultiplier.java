@@ -25,7 +25,6 @@ public class CommandSetMultiplier implements ICommand {
                 String multiplier = request.getParameter("multiplier");
                 String user = (String) request.getSession(false).getAttribute("user");
 
-
                 if (Integer.parseInt(id)>0
                         && Double.parseDouble(multiplier)>0
                         && user.equals(AbstractDAOFactory.getDAOFactory().getRaceDAO().getRaceBookmaker(Integer.parseInt(id)))){

@@ -24,6 +24,6 @@ public class CommandLogOut implements ICommand {
         session.removeAttribute("language");
         session.invalidate();
         logger.info(user + "`s session was interrupted");
-        return  page;
+        return page;
     }
 }

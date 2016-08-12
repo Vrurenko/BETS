@@ -16,6 +16,7 @@ public class CommandAddRace implements ICommand {
 
     /**
      * Adds a new race to DB and putting the updated all bets list into request
+     *
      * @param request
      * @param response
      * @return
@@ -27,23 +28,23 @@ public class CommandAddRace implements ICommand {
         String page = Config.getInstance().getProperty(Config.ADMIN);
         HttpSession session = request.getSession(false);
 
-        if ("administrator".equals(session.getAttribute("usertype"))){
+        if ("administrator".equals(session.getAttribute("usertype"))) {
 
             String bookmaker = request.getParameter("bookmaker");
             String admin = request.getParameter("admin");
 
             try {
                 if (AbstractDAOFactory.getDAOFactory().getUserDAO().isBookmaker(bookmaker)
-                        && AbstractDAOFactory.getDAOFactory().getUserDAO().isAdmin(admin)){
-                    AbstractDAOFactory.getDAOFactory().getRaceDAO().addRace(bookmaker,admin);
-                    session.setAttribute("send","do");
+                        && AbstractDAOFactory.getDAOFactory().getUserDAO().isAdmin(admin)) {
+                    AbstractDAOFactory.getDAOFactory().getRaceDAO().addRace(bookmaker, admin);
+                    session.setAttribute("send", "do");
                     logger.info("The race was added successfully");
 
                 }
             } catch (SQLException e) {
                 logger.warn("SQLException in CommandAddRace:" + e);
             }
-                session.setAttribute("races",AbstractDAOFactory.getDAOFactory().getRaceDAO().getAllRaces());
+            session.setAttribute("races", AbstractDAOFactory.getDAOFactory().getRaceDAO().getAllRaces());
         } else {
             page = Config.getInstance().getProperty(Config.LOGIN);
         }

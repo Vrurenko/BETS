@@ -11,13 +11,14 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
- *  Command for adding
+ * Command for adding
  */
 public class CommandAddBet implements ICommand {
     private static final Logger logger = Logger.getLogger(CommandAddBet.class);
 
     /**
      * Adds a new bet to DB and puts the updated all bets list into request
+     *
      * @param request
      * @param response
      * @return page to forward
@@ -29,7 +30,7 @@ public class CommandAddBet implements ICommand {
         String page = Config.getInstance().getProperty(Config.CLIENT);
         HttpSession session = request.getSession(false);
 
-        if ("client".equals(session.getAttribute("usertype"))){
+        if ("client".equals(session.getAttribute("usertype"))) {
             String login = (String) session.getAttribute("user");
             int race = Integer.parseInt(request.getParameter("race"));
             int rider = Integer.parseInt(request.getParameter("rider"));
@@ -37,14 +38,14 @@ public class CommandAddBet implements ICommand {
 
             if (AbstractDAOFactory.getDAOFactory().getRaceDAO().doesExist(race)
                     && !AbstractDAOFactory.getDAOFactory().getRaceDAO().hasWinner(race)
-                    && AbstractDAOFactory.getDAOFactory().getUserDAO().getBalanceByLogin(login) >= amount){
-                AbstractDAOFactory.getDAOFactory().getBetDAO().addBet(login,race,rider,amount);
-                session.setAttribute("send","do");
+                    && AbstractDAOFactory.getDAOFactory().getUserDAO().getBalanceByLogin(login) >= amount) {
+                AbstractDAOFactory.getDAOFactory().getBetDAO().addBet(login, race, rider, amount);
+                session.setAttribute("send", "do");
                 logger.info("The bet was made by " + login);
             }
-            session.setAttribute("bets",AbstractDAOFactory.getDAOFactory().getBetDAO().getBetsByUser(login));
-            session.setAttribute("races",AbstractDAOFactory.getDAOFactory().getRaceDAO().getAllRaces());
-            session.setAttribute("balance",AbstractDAOFactory.getDAOFactory().getUserDAO().getBalanceByLogin(login));
+            session.setAttribute("bets", AbstractDAOFactory.getDAOFactory().getBetDAO().getBetsByUser(login));
+            session.setAttribute("races", AbstractDAOFactory.getDAOFactory().getRaceDAO().getAllRaces());
+            session.setAttribute("balance", AbstractDAOFactory.getDAOFactory().getUserDAO().getBalanceByLogin(login));
 
         } else {
             page = Config.getInstance().getProperty(Config.LOGIN);

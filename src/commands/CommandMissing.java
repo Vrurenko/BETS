@@ -16,7 +16,7 @@ public class CommandMissing implements ICommand {
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         logger.info("There is unknown command for servlet. Redirected to login page");
         HttpSession session = request.getSession();
-        session.setAttribute("send","do");
+        session.setAttribute("send", "do");
         return Config.getInstance().getProperty(Config.LOGIN);
     }
 }

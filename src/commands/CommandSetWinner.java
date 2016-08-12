@@ -23,14 +23,14 @@ public class CommandSetWinner implements ICommand {
         HttpSession session = request.getSession(false);
 
         try {
-            if (Integer.parseInt(id)>0
-                    && Integer.parseInt(winner)>0
+            if (Integer.parseInt(id) > 0
+                    && Integer.parseInt(winner) > 0
                     && user.equals(AbstractDAOFactory.getDAOFactory().getRaceDAO().getRaceAdmin(Integer.parseInt(id)))) {
                 AbstractDAOFactory.getDAOFactory().getRaceDAO().setWinner(Integer.parseInt(id), Integer.parseInt(winner));
-                session.setAttribute("send","do");
+                session.setAttribute("send", "do");
                 logger.info("Winner " + winner + " was successfully announced");
             }
-            session.setAttribute("races",AbstractDAOFactory.getDAOFactory().getRaceDAO().getAllRaces());
+            session.setAttribute("races", AbstractDAOFactory.getDAOFactory().getRaceDAO().getAllRaces());
         } catch (NumberFormatException e) {
             logger.warn("NumberFormatException in CommandSetWinner: " + e);
         }

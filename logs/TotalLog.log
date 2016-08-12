@@ -701,3 +701,69 @@
 2016-08-12 14:21:36 INFO  Controller:75 - Redirected to /client.jsp
 2016-08-12 14:21:44 INFO  Controller:62 - There was a class commands.CommandAddBet instance returned
 2016-08-12 14:21:44 INFO  Controller:75 - Redirected to /client.jsp
+2016-08-12 14:47:15 INFO  Controller:62 - There was a class commands.CommandLogOut instance returned
+2016-08-12 14:47:15 INFO  CommandLogOut:26 - 1233333`s session was interrupted
+2016-08-12 14:47:15 INFO  Controller:79 - Forwarded to /login.jsp
+2016-08-12 14:47:28 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
+2016-08-12 14:47:28 INFO  CommandLogin:30 - The user Viacheslav has been successfully authorized
+2016-08-12 14:47:28 INFO  Controller:75 - Redirected to /client.jsp
+2016-08-12 15:12:03 INFO  Controller:62 - There was a class commands.CommandLogOut instance returned
+2016-08-12 15:12:03 INFO  CommandLogOut:26 - Viacheslav`s session was interrupted
+2016-08-12 15:12:03 INFO  Controller:79 - Forwarded to /login.jsp
+2016-08-12 15:12:07 INFO  Controller:62 - There was a class commands.CommandMissing instance returned
+2016-08-12 15:12:07 INFO  CommandMissing:17 - There is unknown command for servlet. Redirected to login page
+2016-08-12 15:12:07 INFO  Controller:75 - Redirected to /login.jsp
+2016-08-12 15:12:16 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
+2016-08-12 15:12:16 INFO  Controller:75 - Redirected to /error.jsp
+2016-08-12 15:13:19 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
+2016-08-12 15:13:19 INFO  CommandLogin:30 - The user Viacheslav has been successfully authorized
+2016-08-12 15:13:19 INFO  Controller:75 - Redirected to /client.jsp
+2016-08-12 15:15:42 INFO  Controller:62 - There was a class commands.CommandLogOut instance returned
+2016-08-12 15:15:42 INFO  CommandLogOut:26 - Viacheslav`s session was interrupted
+2016-08-12 15:15:42 INFO  Controller:79 - Forwarded to /login.jsp
+2016-08-12 15:17:28 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
+2016-08-12 15:17:28 INFO  Controller:79 - Forwarded to /error.jsp
+2016-08-12 15:28:44 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
+2016-08-12 15:28:45 INFO  Controller:79 - Forwarded to /error.jsp
+2016-08-12 15:29:11 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
+2016-08-12 15:29:11 INFO  Controller:79 - Forwarded to /error.jsp
+2016-08-12 15:29:24 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
+2016-08-12 15:29:24 INFO  Controller:79 - Forwarded to /error.jsp
+2016-08-12 15:29:57 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
+2016-08-12 15:29:57 INFO  Controller:79 - Forwarded to /error.jsp
+2016-08-12 15:30:35 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
+2016-08-12 15:30:35 INFO  Controller:79 - Forwarded to /error.jsp
+2016-08-12 15:31:10 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
+2016-08-12 15:31:10 INFO  Controller:79 - Forwarded to /error.jsp
+2016-08-12 15:31:34 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
+2016-08-12 15:31:34 INFO  Controller:79 - Forwarded to /error.jsp
+2016-08-12 15:32:11 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
+2016-08-12 15:32:11 INFO  Controller:79 - Forwarded to /error.jsp
+2016-08-12 15:32:33 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
+2016-08-12 15:32:33 INFO  Controller:79 - Forwarded to /error.jsp
+2016-08-12 15:33:06 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
+2016-08-12 15:33:06 INFO  Controller:79 - Forwarded to /error.jsp
+2016-08-12 15:33:29 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
+2016-08-12 15:33:29 INFO  Controller:79 - Forwarded to /error.jsp
+2016-08-12 15:36:12 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
+2016-08-12 15:36:12 INFO  CommandLogin:30 - The user Viacheslav has been successfully authorized
+2016-08-12 15:36:12 INFO  Controller:75 - Redirected to /client.jsp
+2016-08-12 15:36:31 INFO  Controller:62 - There was a class commands.CommandLogOut instance returned
+2016-08-12 15:36:31 INFO  CommandLogOut:26 - Viacheslav`s session was interrupted
+2016-08-12 15:36:31 INFO  Controller:79 - Forwarded to /login.jsp
+2016-08-12 15:36:45 INFO  Controller:62 - There was a class commands.CommandToRegistration instance returned
+2016-08-12 15:36:45 INFO  Controller:75 - Redirected to /registration.jsp
+2016-08-12 15:39:57 INFO  Controller:62 - There was a class commands.CommandToRegistration instance returned
+2016-08-12 15:39:57 INFO  Controller:75 - Redirected to /registration.jsp
+2016-08-12 15:40:16 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
+2016-08-12 15:40:16 INFO  CommandLogin:30 - The user Victoria has been successfully authorized
+2016-08-12 15:40:16 INFO  Controller:75 - Redirected to /admin.jsp
+2016-08-12 15:40:32 INFO  Controller:62 - There was a class commands.CommandLogOut instance returned
+2016-08-12 15:40:32 INFO  CommandLogOut:26 - Victoria`s session was interrupted
+2016-08-12 15:40:32 INFO  Controller:79 - Forwarded to /login.jsp
+2016-08-12 15:46:24 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
+2016-08-12 15:46:25 INFO  CommandLogin:29 - The user Viacheslav has been successfully authorized
+2016-08-12 15:46:25 INFO  Controller:75 - Redirected to /client.jsp
+2016-08-12 15:46:30 INFO  Controller:62 - There was a class commands.CommandLogOut instance returned
+2016-08-12 15:46:30 INFO  CommandLogOut:26 - Viacheslav`s session was interrupted
+2016-08-12 15:46:30 INFO  Controller:79 - Forwarded to /login.jsp

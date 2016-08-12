@@ -27,7 +27,7 @@ public class NoCacheFilter implements Filter {
         response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
         response.setDateHeader("Expires", 0); // Proxies.
 
-        boolean loggedIn = session != null && session.getAttribute("user") != null;
+        boolean loggedIn = (session != null) && (session.getAttribute("user") != null);
         boolean loginRequest = request.getRequestURI().equals(loginURI);
 
         if (loggedIn || loginRequest) {
