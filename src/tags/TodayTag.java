@@ -8,7 +8,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-
 public final class TodayTag extends TagSupport {
     private String language = null;
     private String format = null;
