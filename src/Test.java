@@ -6,7 +6,7 @@ public class Test {
 
         String[] addresses = {"slava.rurenko@gmail.com", "slava_rur@mail.ru"};
 
-        Mailer.informUsers("Пшонка", "Идите нахуй", addresses);
+        Mailer.informUsers("Test subject", "Test text", addresses);
 
     }
 }
