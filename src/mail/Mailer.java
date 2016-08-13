@@ -2,6 +2,7 @@ package mail;
 
 import javax.mail.*;
 import javax.mail.internet.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Properties;
 import java.util.ResourceBundle;
@@ -24,7 +25,7 @@ public class Mailer {
     }
 
 
-    public static void informUsers(String subject, String text, String[] addresses) {
+    public static void informUsers(String subject, String text, ArrayList<String> addressList) {
 
         Session session = Session.getInstance(mailProperties, new Authenticator() {
             @Override
@@ -37,13 +38,15 @@ public class Mailer {
             MimeMessage message = new MimeMessage(session);
             message.setFrom(new InternetAddress(SENDER));
 
-            InternetAddress[] recipients = new InternetAddress[addresses.length];
+            String[] addresses = new String[addressList.size()];
+            InternetAddress[] recepients = new InternetAddress[addressList.size()];
+            addressList.toArray(addresses);
+
             for (int i = 0; i < addresses.length; i++) {
-                recipients[i] = new InternetAddress(addresses[i].trim().toLowerCase());
+                recepients[i] = new InternetAddress(addresses[i]);
             }
 
-            message.setRecipients(Message.RecipientType.TO, recipients);
-
+            message.setRecipients(Message.RecipientType.TO, recepients);
             message.setSubject(subject);
             message.setSentDate(new Date());
             message.setText(text);
