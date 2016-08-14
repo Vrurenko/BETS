@@ -1,6 +1,7 @@
 package commands;
 
 import dao.AbstractDAOFactory;
+import mail.Mailer;
 import manager.Config;
 import org.apache.log4j.Logger;
 
@@ -38,6 +39,9 @@ public class CommandAddRace implements ICommand {
                         && AbstractDAOFactory.getDAOFactory().getUserDAO().isAdmin(admin)) {
                     AbstractDAOFactory.getDAOFactory().getRaceDAO().addRace(bookmaker, admin);
                     session.setAttribute("send", "do");
+                    Mailer.informUsers("New race was added",
+                            "Dear User, inform you about the new race adding.",
+                            AbstractDAOFactory.getDAOFactory().getUserDAO().getEmailList());
                     logger.info("The race was added successfully");
 
                 }

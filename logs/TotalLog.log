@@ -831,3 +831,17 @@
 2016-08-12 20:01:23 INFO  Controller:62 - There was a class commands.CommandLogOut instance returned
 2016-08-12 20:01:23 INFO  CommandLogOut:26 - Bookmaker`s session was interrupted
 2016-08-12 20:01:23 INFO  Controller:79 - Forwarded to /login.jsp
+2016-08-13 20:31:48 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
+2016-08-13 20:31:49 INFO  CommandLogin:29 - The user Victoria has been successfully authorized
+2016-08-13 20:31:49 INFO  Controller:75 - Redirected to /admin.jsp
+2016-08-13 20:32:05 INFO  Controller:62 - There was a class commands.CommandAddRace instance returned
+2016-08-13 20:32:31 INFO  Controller:62 - There was a class commands.CommandAddRace instance returned
+2016-08-13 20:35:12 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
+2016-08-13 20:35:13 INFO  CommandLogin:29 - The user Victoria has been successfully authorized
+2016-08-13 20:35:13 INFO  Controller:75 - Redirected to /admin.jsp
+2016-08-13 20:35:30 INFO  Controller:62 - There was a class commands.CommandAddRace instance returned
+2016-08-13 20:35:32 INFO  CommandAddRace:45 - The race was added successfully
+2016-08-13 20:35:32 INFO  Controller:75 - Redirected to /admin.jsp
+2016-08-13 20:35:59 INFO  Controller:62 - There was a class commands.CommandLogOut instance returned
+2016-08-13 20:35:59 INFO  CommandLogOut:26 - Victoria`s session was interrupted
+2016-08-13 20:35:59 INFO  Controller:79 - Forwarded to /login.jsp

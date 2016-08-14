@@ -4,7 +4,9 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.PreparedStatement;
+import java.util.ArrayList;
 
+import beans.User;
 import dao.AbstractDAOFactory;
 import dao.ConnectionPool;
 import dao.interfaces.IUserDAO;
@@ -25,7 +27,7 @@ public class UserDAO implements IUserDAO {
      * @throws SQLException
      */
     @Override
-    public boolean checkUserByLoginAndPassword(String login, String password) throws SQLException {
+    public boolean checkUserByLoginAndPassword(String login, String password){
         Boolean result = false;
         try{
             connection = connectionPool.getConnection();
@@ -218,5 +220,26 @@ public class UserDAO implements IUserDAO {
         return AbstractDAOFactory.getDAOFactory().getUserDAO().checkUserByLogin(login)
                 && AbstractDAOFactory.getDAOFactory().getUserTypeDAO().getTypeByLogin(login)
                 .equals(AbstractDAOFactory.getDAOFactory().getUserTypeDAO().getTypeById(2));
+    }
+
+    @Override
+    public ArrayList<String> getEmailList(){
+        ArrayList<String> list = new ArrayList<>();
+        try {
+            connection = connectionPool.getConnection();
+            preparedStatement = connection.prepareStatement("SELECT * FROM user");
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                String email = resultSet.getString("email");
+                if (email != null){
+                    list.add(resultSet.getString("email"));
+                }
+            }
+        } catch (SQLException e){
+            e.printStackTrace();
+        } finally {
+            connectionPool.releaseConnection(connection);
+        }
+        return list;
     }
 }

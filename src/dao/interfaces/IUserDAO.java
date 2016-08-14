@@ -1,6 +1,7 @@
 package dao.interfaces;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public interface IUserDAO {
 
@@ -13,4 +14,5 @@ public interface IUserDAO {
     boolean addBalanceByLogin(String login, double amount);
     boolean isBookmaker(String login) throws SQLException;
     boolean isAdmin(String login) throws SQLException;
+    ArrayList<String> getEmailList();
 }
