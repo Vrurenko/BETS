@@ -75,7 +75,7 @@ public class UserDAO implements IUserDAO {
      * @return True value in case of successfully addition, else False
      */
     @Override
-    public boolean addUser(String userName, String password, String userType) {
+    public boolean addUser(String userName, String password, String userType, String email) {
         boolean result = AbstractDAOFactory.getDAOFactory().getUserDAO().checkUserByLogin(userName);
         if (!result) {
             try {
@@ -85,11 +85,12 @@ public class UserDAO implements IUserDAO {
                 }
                 connection = connectionPool.getConnection();
                 preparedStatement = connection.prepareStatement(
-                        "INSERT INTO user (user_type, username, password, balance) VALUES(?,?,?,?);");
+                        "INSERT INTO user (user_type, username, password, balance, email) VALUES(?,?,?,?,?);");
                 preparedStatement.setInt(1, AbstractDAOFactory.getDAOFactory().getUserTypeDAO().getIdByType(userType));
                 preparedStatement.setString(2, userName);
                 preparedStatement.setString(3, password);
                 preparedStatement.setDouble(4, balance);
+                preparedStatement.setString(5, email);
                 preparedStatement.execute();
             } catch (SQLException e) {
                 logger.error("SQLException in addUser() : " + e);

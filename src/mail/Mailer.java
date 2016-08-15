@@ -16,6 +16,7 @@ public class Mailer {
     private static String SENDER;
     private static String LOGIN;
     private static String PASSWORD;
+    private static Validator validator;
 
     static {
         ResourceBundle resourceBundle = ResourceBundle.getBundle("mail");

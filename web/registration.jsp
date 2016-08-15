@@ -56,6 +56,15 @@
             </div>
         </div>
 
+
+        <div class="form-group">
+            <label for="email" class="col-sm-5 control-label"><fmt:message key="registration.email"/></label>
+            <div class="col-sm-3">
+                <input type="email" name="email" value="" id="email" class="form-control">
+            </div>
+        </div>
+
+
         <div class="form-group">
             <label for="usertype" class="col-sm-5 control-label"><fmt:message key="registration.usertype"/></label>
             <div class="col-sm-3">

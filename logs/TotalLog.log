@@ -1,1 +1,29 @@
-﻿
+﻿2016-08-15 12:36:23 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
+2016-08-15 12:36:24 INFO  CommandLogin:28 - The user Viacheslav has been successfully authorized
+2016-08-15 12:36:24 INFO  Controller:75 - Redirected to /client.jsp
+2016-08-15 12:38:50 INFO  Controller:62 - There was a class commands.CommandLogOut instance returned
+2016-08-15 12:38:50 INFO  CommandLogOut:25 - Viacheslav`s session was interrupted
+2016-08-15 12:38:50 INFO  Controller:79 - Forwarded to /login.jsp
+2016-08-15 12:38:56 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
+2016-08-15 12:38:56 INFO  CommandLogin:28 - The user Viacheslav has been successfully authorized
+2016-08-15 12:38:56 INFO  Controller:75 - Redirected to /client.jsp
+2016-08-15 12:43:46 INFO  Controller:62 - There was a class commands.CommandLogOut instance returned
+2016-08-15 12:43:46 INFO  CommandLogOut:25 - Viacheslav`s session was interrupted
+2016-08-15 12:43:46 INFO  Controller:79 - Forwarded to /login.jsp
+2016-08-15 12:43:50 INFO  Controller:62 - There was a class commands.CommandToRegistration instance returned
+2016-08-15 12:43:50 INFO  Controller:75 - Redirected to /registration.jsp
+2016-08-15 13:08:52 INFO  Controller:62 - There was a class commands.CommandToRegistration instance returned
+2016-08-15 13:08:52 INFO  Controller:75 - Redirected to /registration.jsp
+2016-08-15 13:09:14 INFO  Controller:62 - There was a class commands.CommandRegistration instance returned
+2016-08-15 13:09:15 INFO  CommandRegistration:33 - User root was successfully added
+2016-08-15 13:09:15 INFO  Controller:75 - Redirected to /client.jsp
+2016-08-15 13:09:29 INFO  Controller:62 - There was a class commands.CommandLogOut instance returned
+2016-08-15 13:09:29 INFO  CommandLogOut:25 - root`s session was interrupted
+2016-08-15 13:09:29 INFO  Controller:79 - Forwarded to /login.jsp
+2016-08-15 13:09:45 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
+2016-08-15 13:09:45 INFO  CommandLogin:28 - The user Victoria has been successfully authorized
+2016-08-15 13:09:45 INFO  Controller:75 - Redirected to /admin.jsp
+2016-08-15 13:10:08 INFO  Controller:62 - There was a class commands.CommandAddRace instance returned
+2016-08-15 13:10:14 INFO  Mailer:59 - The message was successfully sent to [slava_rur@mail.ru]
+2016-08-15 13:10:14 INFO  CommandAddRace:33 - The race was added successfully
+2016-08-15 13:10:14 INFO  Controller:75 - Redirected to /admin.jsp

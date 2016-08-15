@@ -1,6 +1,7 @@
 package commands;
 
 import dao.AbstractDAOFactory;
+import mail.Validator;
 import manager.Config;
 import org.apache.log4j.Logger;
 
@@ -23,8 +24,12 @@ public class CommandRegistration implements ICommand {
         String login = request.getParameter("login");
         String password = request.getParameter("password");
         String usertype = request.getParameter("usertype");
+        String email = null;
+        if (new Validator().validate(request.getParameter("email"))){
+            email = request.getParameter("email");
+        }
 
-        if (AbstractDAOFactory.getDAOFactory().getUserDAO().addUser(login, password, usertype)) {
+        if (AbstractDAOFactory.getDAOFactory().getUserDAO().addUser(login, password, usertype, email)) {
             logger.info("User " + login + " was successfully added");
 
             session.setAttribute("user", login);

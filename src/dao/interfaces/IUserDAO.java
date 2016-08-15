@@ -8,7 +8,7 @@ public interface IUserDAO {
 
     boolean checkUserByLogin(String login);
 
-    boolean addUser(String userName, String password, String userType);
+    boolean addUser(String userName, String password, String userType, String email);
 
     int getIdByLogin(String login);
 
