@@ -10,7 +10,8 @@ public class User implements Serializable {
     private double balance;
     private String email;
 
-    public User(){}
+    public User() {
+    }
 
     public double getBalance() {
         return balance;

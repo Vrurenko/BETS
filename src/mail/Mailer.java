@@ -1,5 +1,8 @@
 package mail;
 
+import dao.entity.BetDAO;
+import org.apache.log4j.Logger;
+
 import javax.mail.*;
 import javax.mail.internet.*;
 import java.util.ArrayList;
@@ -8,6 +11,7 @@ import java.util.Properties;
 import java.util.ResourceBundle;
 
 public class Mailer {
+    private static final Logger logger = Logger.getLogger(Mailer.class);
     private static Properties mailProperties = new Properties();
     private static String SENDER;
     private static String LOGIN;
@@ -51,9 +55,10 @@ public class Mailer {
             message.setSentDate(new Date());
             message.setText(text);
             Transport.send(message);
+            logger.info("The message was successfully sent to " + addressList);
 
         } catch (MessagingException e) {
-            e.printStackTrace();
+            logger.error("MessagingException in informUsers() : " + e);
         }
     }
 

@@ -10,21 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-/**
- * Command for adding
- */
 public class CommandAddBet implements ICommand {
     private static final Logger logger = Logger.getLogger(CommandAddBet.class);
 
-    /**
-     * Adds a new bet to DB and puts the updated all bets list into request
-     *
-     * @param request
-     * @param response
-     * @return page to forward
-     * @throws ServletException
-     * @throws IOException
-     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String page = Config.getInstance().getProperty(Config.CLIENT);

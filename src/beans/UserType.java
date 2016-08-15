@@ -2,11 +2,12 @@ package beans;
 
 import java.io.Serializable;
 
-public class UserType implements Serializable{
+public class UserType implements Serializable {
     private int id;
     private String type;
 
-    public UserType(){}
+    public UserType() {
+    }
 
     public int getId() {
         return id;

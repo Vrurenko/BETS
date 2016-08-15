@@ -2,7 +2,7 @@ package beans;
 
 import java.io.Serializable;
 
-public class Bet implements Serializable{
+public class Bet implements Serializable {
 
     private int id;
     private String client;
@@ -11,7 +11,8 @@ public class Bet implements Serializable{
     private double amount;
     private Boolean result;
 
-    public Bet(){}
+    public Bet() {
+    }
 
     public int getId() {
         return id;

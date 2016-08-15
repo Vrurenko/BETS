@@ -10,9 +10,9 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 public class ConnectionPool {
     private static String url;
-    private static String user ;
-    private static String password ;
-    private static String driver ;
+    private static String user;
+    private static String password;
+    private static String driver;
     private BlockingQueue<Connection> connectionFreeQueue;
     private static final Logger logger = Logger.getLogger(ConnectionPool.class);
 
@@ -39,7 +39,7 @@ public class ConnectionPool {
     }
 
     public static ConnectionPool getInstance() {
-        if (connectionPool == null){
+        if (connectionPool == null) {
             connectionPool = new ConnectionPool();
         }
         return connectionPool;
@@ -50,7 +50,7 @@ public class ConnectionPool {
     }
 
     public Connection getConnection() throws SQLException {
-        if (connectionFreeQueue.isEmpty()){
+        if (connectionFreeQueue.isEmpty()) {
             connectionFreeQueue.add(java.sql.DriverManager.getConnection(url, user, password));
         }
         return connectionFreeQueue.poll();

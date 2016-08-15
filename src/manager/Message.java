@@ -9,7 +9,6 @@ public class Message {
     private static final String BUNDLE_NAME = "messages";
     public static final String SERVLET_EXCEPTION = "SERVLET_EXCEPTION";
     public static final String IO_EXCEPTION = "IO_EXCEPTION";
-    public static final String LOGIN_ERROR = "LOGIN_ERROR";
 
     public static Message getInstance() {
         if (instance == null) {

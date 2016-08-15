@@ -28,7 +28,7 @@ public class MySQLDAOFactory extends AbstractDAOFactory {
     }
 
     @Override
-    public IUserTypeDAO getUserTypeDAO(){
+    public IUserTypeDAO getUserTypeDAO() {
         return new UserTypeDAO();
     }
 

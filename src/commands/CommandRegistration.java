@@ -20,38 +20,33 @@ public class CommandRegistration implements ICommand {
         String page = null;
         HttpSession session = request.getSession(false);
 
-        try {
-            String login = request.getParameter("login");
-            String password = request.getParameter("password");
-            String usertype = request.getParameter("usertype");
+        String login = request.getParameter("login");
+        String password = request.getParameter("password");
+        String usertype = request.getParameter("usertype");
 
-            if (AbstractDAOFactory.getDAOFactory().getUserDAO().addUser(login, password, usertype)) {
-                logger.info("User " + login + " was successfully added");
+        if (AbstractDAOFactory.getDAOFactory().getUserDAO().addUser(login, password, usertype)) {
+            logger.info("User " + login + " was successfully added");
 
-                session.setAttribute("user", login);
-                session.setAttribute("usertype", usertype);
-                session.setAttribute("send", "do");
+            session.setAttribute("user", login);
+            session.setAttribute("usertype", usertype);
+            session.setAttribute("send", "do");
 
-                if (usertype.equals(AbstractDAOFactory.getDAOFactory().getUserTypeDAO().getTypeById(1))) {
-                    session.setAttribute("bets", AbstractDAOFactory.getDAOFactory().getBetDAO().getBetsByUser(login));
-                    session.setAttribute("balance", AbstractDAOFactory.getDAOFactory().getUserDAO().getBalanceByLogin(login));
-                    session.setAttribute("races", AbstractDAOFactory.getDAOFactory().getRaceDAO().getAllRaces());
-                    page = Config.getInstance().getProperty(Config.CLIENT);
-                }
-                if (usertype.equals(AbstractDAOFactory.getDAOFactory().getUserTypeDAO().getTypeById(2))) {
-                    session.setAttribute("races", AbstractDAOFactory.getDAOFactory().getRaceDAO().getAllRaces());
-                    page = Config.getInstance().getProperty(Config.ADMIN);
-                }
-                if (usertype.equals(AbstractDAOFactory.getDAOFactory().getUserTypeDAO().getTypeById(3))) {
-                    session.setAttribute("races", AbstractDAOFactory.getDAOFactory().getRaceDAO().getAllRaces());
-                    page = Config.getInstance().getProperty(Config.BOOKMAKER);
-                }
-
-            } else {
-                page = Config.getInstance().getProperty(Config.REGISTRATION);
+            if (usertype.equals(AbstractDAOFactory.getDAOFactory().getUserTypeDAO().getTypeById(1))) {
+                session.setAttribute("bets", AbstractDAOFactory.getDAOFactory().getBetDAO().getBetsByUser(login));
+                session.setAttribute("balance", AbstractDAOFactory.getDAOFactory().getUserDAO().getBalanceByLogin(login));
+                session.setAttribute("races", AbstractDAOFactory.getDAOFactory().getRaceDAO().getAllRaces());
+                page = Config.getInstance().getProperty(Config.CLIENT);
             }
-        } catch (SQLException e) {
-            logger.warn("SQLException in CommandRegistration:" + e);
+            if (usertype.equals(AbstractDAOFactory.getDAOFactory().getUserTypeDAO().getTypeById(2))) {
+                session.setAttribute("races", AbstractDAOFactory.getDAOFactory().getRaceDAO().getAllRaces());
+                page = Config.getInstance().getProperty(Config.ADMIN);
+            }
+            if (usertype.equals(AbstractDAOFactory.getDAOFactory().getUserTypeDAO().getTypeById(3))) {
+                session.setAttribute("races", AbstractDAOFactory.getDAOFactory().getRaceDAO().getAllRaces());
+                page = Config.getInstance().getProperty(Config.BOOKMAKER);
+            }
+        } else {
+            page = Config.getInstance().getProperty(Config.REGISTRATION);
         }
         return page;
     }

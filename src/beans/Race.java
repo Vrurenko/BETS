@@ -10,7 +10,8 @@ public class Race implements Serializable {
     private Double multiplier;
     private Integer winner;
 
-    public Race(){}
+    public Race() {
+    }
 
     public int getId() {
         return id;

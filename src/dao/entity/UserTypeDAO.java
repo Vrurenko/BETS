@@ -18,46 +18,47 @@ public class UserTypeDAO implements IUserTypeDAO {
 
     /**
      * Returns user type by identifier
+     *
      * @param id Integer value of user type primary key
      * @return String value of user type
      */
     @Override
-    public String getTypeById(int id)  {
+    public String getTypeById(int id) {
         String type = null;
-        try{
+        try {
             connection = connectionPool.getConnection();
             preparedStatement = connection.prepareStatement("SELECT type FROM user_type WHERE id = ?");
-            preparedStatement.setInt(1,id);
+            preparedStatement.setInt(1, id);
             resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()){
+            if (resultSet.next()) {
                 type = resultSet.getString("type");
             }
-        } catch (SQLException e){
+        } catch (SQLException e) {
             logger.error("SQLException in getTypeById() : " + e);
         } finally {
             connectionPool.releaseConnection(connection);
         }
-    return type;
+        return type;
     }
 
     /**
      * Returns unique identifier of user type
+     *
      * @param type String value of user type
      * @return Integer value of user type identifier
-     * @throws SQLException
      */
     @Override
-    public int getIdByType(String type) throws SQLException {
+    public int getIdByType(String type) {
         int id = -1;
-        try{
+        try {
             connection = connectionPool.getConnection();
             preparedStatement = connection.prepareStatement("SELECT id FROM user_type WHERE type = ?");
-            preparedStatement.setString(1,type);
+            preparedStatement.setString(1, type);
             resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()){
+            if (resultSet.next()) {
                 return resultSet.getInt("id");
             }
-        } catch (SQLException e){
+        } catch (SQLException e) {
             logger.error("SQLException in getIdByType() : " + e);
         } finally {
             connectionPool.releaseConnection(connection);
@@ -67,22 +68,22 @@ public class UserTypeDAO implements IUserTypeDAO {
 
     /**
      * Returns user type according to the user login
+     *
      * @param login String value of user login
      * @return String value of user type
-     * @throws SQLException
      */
     @Override
-    public String getTypeByLogin(String login) throws SQLException {
+    public String getTypeByLogin(String login) {
         String type = null;
-        try{
+        try {
             connection = connectionPool.getConnection();
             preparedStatement = connection.prepareStatement("SELECT user_type FROM user WHERE username = ?");
-            preparedStatement.setString(1,login);
+            preparedStatement.setString(1, login);
             resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()){
+            if (resultSet.next()) {
                 type = AbstractDAOFactory.getDAOFactory().getUserTypeDAO().getTypeById(resultSet.getInt("user_type"));
             }
-        } catch (SQLException e){
+        } catch (SQLException e) {
             logger.error("SQLException in getTypeByLogin() : " + e);
         } finally {
             connectionPool.releaseConnection(connection);
