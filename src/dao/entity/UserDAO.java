@@ -35,6 +35,12 @@ public class UserDAO implements IUserDAO {
             preparedStatement.setString(2, password);
             resultSet = preparedStatement.executeQuery();
             result = resultSet.next();
+            if (resultSet != null) {
+                resultSet.close();
+            }
+            if (preparedStatement != null) {
+                preparedStatement.close();
+            }
         } catch (SQLException e) {
             logger.error("SQLException in checkUserByLoginAndPassword() : " + e);
         } finally {
@@ -58,6 +64,12 @@ public class UserDAO implements IUserDAO {
             preparedStatement.setString(1, login);
             resultSet = preparedStatement.executeQuery();
             result = resultSet.next();
+            if (resultSet != null) {
+                resultSet.close();
+            }
+            if (preparedStatement != null) {
+                preparedStatement.close();
+            }
         } catch (SQLException e) {
             logger.error("SQLException in checkUserByLogin() : " + e);
         } finally {
@@ -92,13 +104,18 @@ public class UserDAO implements IUserDAO {
                 preparedStatement.setDouble(4, balance);
                 preparedStatement.setString(5, email);
                 preparedStatement.execute();
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (preparedStatement != null) {
+                    preparedStatement.close();
+                }
             } catch (SQLException e) {
                 logger.error("SQLException in addUser() : " + e);
             }
         }
         return !result;
     }
-
 
     /**
      * Returns primary key of DB record? that contains the specified user login
@@ -116,6 +133,12 @@ public class UserDAO implements IUserDAO {
             resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 id = resultSet.getInt("id");
+            }
+            if (resultSet != null) {
+                resultSet.close();
+            }
+            if (preparedStatement != null) {
+                preparedStatement.close();
             }
         } catch (SQLException e) {
             logger.error("SQLException in getIdByLogin() : " + e);
@@ -142,6 +165,12 @@ public class UserDAO implements IUserDAO {
             if (resultSet.next()) {
                 login = resultSet.getString("username");
             }
+            if (resultSet != null) {
+                resultSet.close();
+            }
+            if (preparedStatement != null) {
+                preparedStatement.close();
+            }
         } catch (SQLException e) {
             logger.error("SQLException in getLoginById() : " + e);
         } finally {
@@ -166,6 +195,12 @@ public class UserDAO implements IUserDAO {
             resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 balance = resultSet.getInt("balance");
+            }
+            if (resultSet != null) {
+                resultSet.close();
+            }
+            if (preparedStatement != null) {
+                preparedStatement.close();
             }
         } catch (SQLException e) {
             logger.error("SQLException in getBalanceByLogin() : " + e);
@@ -192,6 +227,12 @@ public class UserDAO implements IUserDAO {
             preparedStatement.setString(2, login);
             if (preparedStatement.executeUpdate() > 0) {
                 result = true;
+            }
+            if (resultSet != null) {
+                resultSet.close();
+            }
+            if (preparedStatement != null) {
+                preparedStatement.close();
             }
         } catch (SQLException e) {
             logger.error("SQLException in addBalanceByLogin() : " + e);
@@ -239,6 +280,12 @@ public class UserDAO implements IUserDAO {
                 if (email != null) {
                     list.add(resultSet.getString("email"));
                 }
+            }
+            if (resultSet != null) {
+                resultSet.close();
+            }
+            if (preparedStatement != null) {
+                preparedStatement.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();

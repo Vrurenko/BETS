@@ -27,3 +27,21 @@
 2016-08-15 13:10:14 INFO  Mailer:59 - The message was successfully sent to [slava_rur@mail.ru]
 2016-08-15 13:10:14 INFO  CommandAddRace:33 - The race was added successfully
 2016-08-15 13:10:14 INFO  Controller:75 - Redirected to /admin.jsp
+2016-08-15 13:31:27 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
+2016-08-15 13:31:27 INFO  CommandLogin:28 - The user Viacheslav has been successfully authorized
+2016-08-15 13:43:18 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
+2016-08-15 13:43:19 INFO  CommandLogin:28 - The user Viacheslav has been successfully authorized
+2016-08-15 13:43:19 INFO  Controller:75 - Redirected to /client.jsp
+2016-08-15 13:43:27 INFO  Controller:62 - There was a class commands.CommandLogOut instance returned
+2016-08-15 13:43:27 INFO  CommandLogOut:25 - Viacheslav`s session was interrupted
+2016-08-15 13:43:27 INFO  Controller:79 - Forwarded to /login.jsp
+2016-08-15 13:43:37 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
+2016-08-15 13:43:37 INFO  CommandLogin:28 - The user Victoria has been successfully authorized
+2016-08-15 13:43:38 INFO  Controller:75 - Redirected to /admin.jsp
+2016-08-15 13:43:46 INFO  Controller:62 - There was a class commands.CommandAddRace instance returned
+2016-08-15 13:43:46 INFO  Controller:75 - Redirected to /admin.jsp
+2016-08-15 13:43:59 INFO  Controller:62 - There was a class commands.CommandSetWinner instance returned
+2016-08-15 13:43:59 INFO  Controller:75 - Redirected to /admin.jsp
+2016-08-15 13:52:02 INFO  Controller:62 - There was a class commands.CommandLogOut instance returned
+2016-08-15 13:52:02 INFO  CommandLogOut:25 - Victoria`s session was interrupted
+2016-08-15 13:52:02 INFO  Controller:79 - Forwarded to /login.jsp

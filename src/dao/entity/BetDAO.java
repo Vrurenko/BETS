@@ -45,6 +45,12 @@ public class BetDAO implements IBetDAO {
                 }
                 list.add(bet);
             }
+            if (resultSet != null) {
+                resultSet.close();
+            }
+            if (preparedStatement != null) {
+                preparedStatement.close();
+            }
         } catch (SQLException e) {
             logger.error("SQLException in getBetsByUser() : " + e);
         } finally {
@@ -73,8 +79,12 @@ public class BetDAO implements IBetDAO {
             preparedStatement.setInt(2, race);
             preparedStatement.setInt(3, rider);
             preparedStatement.setDouble(4, amount);
-            preparedStatement.execute();
-            result = true;
+            if (preparedStatement.executeUpdate() > 0) {
+                result = true;
+            }
+            if (preparedStatement != null) {
+                preparedStatement.close();
+            }
         } catch (SQLException e) {
             logger.error("SQLException in addBet() : " + e);
         }
@@ -98,6 +108,9 @@ public class BetDAO implements IBetDAO {
             preparedStatement.setInt(2, id);
             if (preparedStatement.executeUpdate() > 0) {
                 answer = true;
+            }
+            if (preparedStatement != null) {
+                preparedStatement.close();
             }
         } catch (SQLException e) {
             logger.error("SQLException in setBetResultByID() : " + e);

@@ -48,6 +48,12 @@ public class RaceDAO implements IRaceDAO {
                 }
                 list.add(race);
             }
+            if (resultSet != null) {
+                resultSet.close();
+            }
+            if (preparedStatement != null) {
+                preparedStatement.close();
+            }
         } catch (SQLException e) {
             logger.error("SQLException in getAllRaces() : " + e);
         } finally {
@@ -73,6 +79,9 @@ public class RaceDAO implements IRaceDAO {
             preparedStatement.setInt(2, id);
             if (preparedStatement.executeUpdate() > 0) {
                 result = true;
+            }
+            if (preparedStatement != null) {
+                preparedStatement.close();
             }
         } catch (SQLException e) {
             logger.error("SQLException in setMultiplier() : " + e);
@@ -120,6 +129,12 @@ public class RaceDAO implements IRaceDAO {
                 }
             }
             /////////////////////////////////////////////////////////////////////////////////////////////////////
+            if (resultSet != null) {
+                resultSet.close();
+            }
+            if (preparedStatement != null) {
+                preparedStatement.close();
+            }
         } catch (SQLException e) {
             logger.error("SQLException in setWinner() : " + e);
         } finally {
@@ -145,6 +160,12 @@ public class RaceDAO implements IRaceDAO {
             if (resultSet.next()) {
                 multiplier = resultSet.getDouble("multiplier");
             }
+            if (resultSet != null) {
+                resultSet.close();
+            }
+            if (preparedStatement != null) {
+                preparedStatement.close();
+            }
         } catch (SQLException e) {
             logger.error("SQLException in getMultiplierByRaceID() : " + e);
         } finally {
@@ -168,8 +189,12 @@ public class RaceDAO implements IRaceDAO {
             preparedStatement = connection.prepareStatement("INSERT INTO race (bookmaker, admin) VALUES (?,?)");
             preparedStatement.setInt(1, AbstractDAOFactory.getDAOFactory().getUserDAO().getIdByLogin(bookmaker));
             preparedStatement.setInt(2, AbstractDAOFactory.getDAOFactory().getUserDAO().getIdByLogin(admin));
-            preparedStatement.execute();
-            result = true;
+            if (preparedStatement.executeUpdate() > 0) {
+                result = true;
+            }
+            if (preparedStatement != null) {
+                preparedStatement.close();
+            }
         } catch (SQLException e) {
             logger.error("SQLException in addRace() : " + e);
         } finally {
@@ -196,6 +221,12 @@ public class RaceDAO implements IRaceDAO {
             if (resultSet.next()) {
                 admin = AbstractDAOFactory.getDAOFactory().getUserDAO().getLoginById(resultSet.getInt("admin"));
             }
+            if (resultSet != null) {
+                resultSet.close();
+            }
+            if (preparedStatement != null) {
+                preparedStatement.close();
+            }
         } catch (SQLException e) {
             logger.error("SQLException in getRaceAdmin() : " + e);
         } finally {
@@ -221,6 +252,12 @@ public class RaceDAO implements IRaceDAO {
             resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 bookmaker = AbstractDAOFactory.getDAOFactory().getUserDAO().getLoginById(resultSet.getInt("bookmaker"));
+            }
+            if (resultSet != null) {
+                resultSet.close();
+            }
+            if (preparedStatement != null) {
+                preparedStatement.close();
             }
         } catch (SQLException e) {
             logger.error("SQLException in getRaceBookmaker() : " + e);
@@ -250,6 +287,12 @@ public class RaceDAO implements IRaceDAO {
             if (resultSet.wasNull()) {
                 result = false;
             }
+            if (resultSet != null) {
+                resultSet.close();
+            }
+            if (preparedStatement != null) {
+                preparedStatement.close();
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -276,6 +319,12 @@ public class RaceDAO implements IRaceDAO {
             if (resultSet.next()) {
                 result = true;
             }
+            if (resultSet != null) {
+                resultSet.close();
+            }
+            if (preparedStatement != null) {
+                preparedStatement.close();
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -288,7 +337,7 @@ public class RaceDAO implements IRaceDAO {
      * Checks race for the multiplier existence
      *
      * @param id Integer value of race identifier
-     * @return True value in case of multiplier existence, else False
+     * @return True value in case of race existence, else False
      */
     @Override
     public boolean hasMultiplier(int id) {
@@ -303,6 +352,12 @@ public class RaceDAO implements IRaceDAO {
             resultSet.getInt("multiplier");
             if (resultSet.wasNull()) {
                 result = false;
+            }
+            if (resultSet != null) {
+                resultSet.close();
+            }
+            if (preparedStatement != null) {
+                preparedStatement.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
