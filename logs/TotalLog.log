@@ -45,3 +45,9 @@
 2016-08-15 13:52:02 INFO  Controller:62 - There was a class commands.CommandLogOut instance returned
 2016-08-15 13:52:02 INFO  CommandLogOut:25 - Victoria`s session was interrupted
 2016-08-15 13:52:02 INFO  Controller:79 - Forwarded to /login.jsp
+2016-08-15 14:01:53 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
+2016-08-15 14:01:53 INFO  CommandLogin:28 - The user Viacheslav has been successfully authorized
+2016-08-15 14:01:54 INFO  Controller:75 - Redirected to /client.jsp
+2016-08-15 14:01:57 INFO  Controller:62 - There was a class commands.CommandLogOut instance returned
+2016-08-15 14:01:57 INFO  CommandLogOut:25 - Viacheslav`s session was interrupted
+2016-08-15 14:01:57 INFO  Controller:79 - Forwarded to /login.jsp
