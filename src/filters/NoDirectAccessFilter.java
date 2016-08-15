@@ -6,7 +6,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-public class NoCacheFilter implements Filter {
+/**
+ * Created by Comandante on 15.08.2016.
+ */
+public class NoDirectAccessFilter implements Filter {
     private FilterConfig filterConfig;
 
     @Override
@@ -20,23 +23,26 @@ public class NoCacheFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         HttpSession session = request.getSession(false);
-        String loginURI = request.getContextPath() + "/login.jsp";
+        String page = null;
 
-        response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
-        response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
-        response.setDateHeader("Expires", 0); // Proxies.
-
-        boolean loggedIn = (session != null) && (session.getAttribute("user") != null);
-        boolean loginRequest = request.getRequestURI().equals(loginURI);
-
-        if (loggedIn || loginRequest) {
-            filterChain.doFilter(request, response);
-        } else {
-            response.sendRedirect(loginURI);
+        switch ((String) session.getAttribute("usertype")){
+            case "client": page = "client";
+                break;
+            case "administrator": page = "admin";
+                break;
+            case "bookmaker": page = "bookmaker";
+                break;
         }
+
+        page = "/" + page + ".jsp";
+        request.getRequestDispatcher(page).forward(servletRequest, servletResponse);
+
+        filterChain.doFilter(servletRequest, servletResponse);
+
     }
 
     @Override
     public void destroy() {
+
     }
 }

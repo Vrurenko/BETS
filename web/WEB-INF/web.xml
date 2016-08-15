@@ -34,6 +34,18 @@
         <url-pattern>/admin.jsp</url-pattern>
     </filter-mapping>
 
+    <filter>
+        <filter-name>NoDirectAccessFilter</filter-name>
+        <filter-class>filters.NoDirectAccessFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>NoDirectAccessFilter</filter-name>
+        <url-pattern>/client.jsp</url-pattern>
+        <url-pattern>/bookmaker.jsp</url-pattern>
+        <url-pattern>/admin.jsp</url-pattern>
+    </filter-mapping>
+
+
     <jsp-config>
         <taglib>
             <taglib-uri>/WEB-INF/today.tld</taglib-uri>

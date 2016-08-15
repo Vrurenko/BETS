@@ -25,7 +25,7 @@ public class CommandLogin implements ICommand {
         String type = AbstractDAOFactory.getDAOFactory().getUserTypeDAO().getTypeByLogin(login);
 
         if (AbstractDAOFactory.getDAOFactory().getUserDAO().checkUserByLoginAndPassword(login, password)) {
-            logger.info("The user " + login + " has been successfully authorized");
+            logger.info("The user " + login + " has been successfully authorized as " + type);
             session.setAttribute("user", login);
             session.setAttribute("usertype", type);
             session.setAttribute("send", "do");
