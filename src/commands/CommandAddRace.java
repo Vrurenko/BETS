@@ -30,7 +30,7 @@ public class CommandAddRace implements ICommand {
                 Mailer.informUsers("New race has been added",
                         "Dear User, inform you about the new race adding.",
                         AbstractDAOFactory.getDAOFactory().getUserDAO().getEmailList());
-                logger.info("The race was added successfully");
+                logger.info("The race has been added successfully");
             }
 
             session.setAttribute("races", AbstractDAOFactory.getDAOFactory().getRaceDAO().getAllRaces());

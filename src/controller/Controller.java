@@ -62,10 +62,10 @@ public class Controller extends HttpServlet {
             logger.info("There was a " + command.getClass() + " instance returned");
             page = command.execute(request,response);
         } catch (ServletException e){
-            e.printStackTrace();
+            logger.error("ServletException in Controller: " + e);
             request.setAttribute("messageError", Message.getInstance().getProperty(Message.SERVLET_EXCEPTION));
         } catch (IOException e){
-            e.printStackTrace();
+            logger.error("IOException in Controller: " + e);
             request.setAttribute("messageError",Message.getInstance().getProperty(Message.IO_EXCEPTION));
         }
 

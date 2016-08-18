@@ -29,7 +29,7 @@ public class CommandAddBet implements ICommand {
                     && AbstractDAOFactory.getDAOFactory().getUserDAO().getBalanceByLogin(login) >= amount) {
                 AbstractDAOFactory.getDAOFactory().getBetDAO().addBet(login, race, rider, amount);
                 session.setAttribute("send", "do");
-                logger.info("The bet was made by " + login);
+                logger.info("The bet has been made by " + login);
             }
             session.setAttribute("bets", AbstractDAOFactory.getDAOFactory().getBetDAO().getBetsByUser(login));
             session.setAttribute("races", AbstractDAOFactory.getDAOFactory().getRaceDAO().getAllRaces());

@@ -4,3 +4,21 @@
 2016-08-18 09:27:52 INFO  Controller:62 - There was a class commands.CommandLogOut instance returned
 2016-08-18 09:27:52 INFO  CommandLogOut:25 - Viacheslav`s session has been interrupted
 2016-08-18 09:27:52 INFO  Controller:79 - Forwarded to /login.jsp
+2016-08-18 09:28:47 INFO  Controller:62 - There was a class commands.CommandToRegistration instance returned
+2016-08-18 09:28:47 INFO  Controller:75 - Redirected to /registration.jsp
+2016-08-18 10:14:30 INFO  Controller:62 - There was a class commands.CommandToRegistration instance returned
+2016-08-18 10:14:30 INFO  Controller:75 - Redirected to /registration.jsp
+2016-08-18 10:14:34 INFO  Controller:62 - There was a class commands.CommandToRegistration instance returned
+2016-08-18 10:14:34 INFO  Controller:75 - Redirected to /registration.jsp
+2016-08-18 10:15:57 INFO  Controller:62 - There was a class commands.CommandToRegistration instance returned
+2016-08-18 10:15:57 INFO  Controller:75 - Redirected to /registration.jsp
+2016-08-18 10:16:06 INFO  Controller:62 - There was a class commands.CommandRegistration instance returned
+2016-08-18 10:16:07 INFO  CommandRegistration:33 - User 233 was successfully added
+2016-08-18 10:16:07 INFO  Controller:75 - Redirected to /admin.jsp
+2016-08-18 10:16:39 INFO  Controller:62 - There was a class commands.CommandSetWinner instance returned
+2016-08-18 10:16:39 INFO  Controller:75 - Redirected to /admin.jsp
+2016-08-18 10:16:55 INFO  Controller:62 - There was a class commands.CommandLogOut instance returned
+2016-08-18 10:16:55 INFO  CommandLogOut:25 - 233`s session has been interrupted
+2016-08-18 10:16:55 INFO  Controller:79 - Forwarded to /login.jsp
+2016-08-18 10:36:37 INFO  Controller:62 - There was a class commands.CommandToRegistration instance returned
+2016-08-18 10:36:37 INFO  Controller:75 - Redirected to /registration.jsp

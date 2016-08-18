@@ -1,5 +1,7 @@
 package tags;
 
+import org.apache.log4j.Logger;
+
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspTagException;
 import javax.servlet.jsp.tagext.TagSupport;
@@ -9,6 +11,7 @@ import java.util.Date;
 import java.util.Locale;
 
 public final class TodayTag extends TagSupport {
+    private static final Logger logger = Logger.getLogger(TodayTag.class);
     private String language = null;
     private String format = null;
 
@@ -34,6 +37,7 @@ public final class TodayTag extends TagSupport {
             SimpleDateFormat dateFormatter = new SimpleDateFormat(format, new Locale(getLanguage()));
             pageContext.getOut().write(dateFormatter.format(today));
         } catch (IOException e) {
+            logger.error("IOException in TodayTag: " + e);
             throw new JspTagException(e.getMessage());
         }
         return SKIP_BODY;
