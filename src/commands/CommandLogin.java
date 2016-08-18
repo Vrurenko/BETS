@@ -5,7 +5,6 @@ import manager.Config;
 import org.apache.log4j.Logger;
 
 import java.io.IOException;
-import java.sql.*;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

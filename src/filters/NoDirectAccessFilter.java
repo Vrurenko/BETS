@@ -6,9 +6,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-/**
- * Created by Comandante on 15.08.2016.
- */
 public class NoDirectAccessFilter implements Filter {
     private FilterConfig filterConfig;
 

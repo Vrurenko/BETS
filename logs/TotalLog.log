@@ -203,3 +203,25 @@
 2016-08-16 00:07:46 INFO  Controller:62 - There was a class commands.CommandLogOut instance returned
 2016-08-16 00:07:46 INFO  CommandLogOut:25 - Victoria`s session was interrupted
 2016-08-16 00:07:46 INFO  Controller:79 - Forwarded to /login.jsp
+2016-08-17 21:21:22 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
+2016-08-17 21:21:23 INFO  CommandLogin:28 - The user Viacheslav has been successfully authorized as client
+2016-08-17 21:21:23 INFO  Controller:75 - Redirected to /client.jsp
+2016-08-17 21:26:36 INFO  Controller:62 - There was a class commands.CommandLogOut instance returned
+2016-08-17 21:26:36 INFO  CommandLogOut:25 - Viacheslav`s session was interrupted
+2016-08-17 21:26:36 INFO  Controller:79 - Forwarded to /login.jsp
+2016-08-17 21:26:59 INFO  Controller:62 - There was a class commands.CommandToRegistration instance returned
+2016-08-17 21:26:59 INFO  Controller:75 - Redirected to /registration.jsp
+2016-08-17 21:27:30 INFO  Controller:62 - There was a class commands.CommandRegistration instance returned
+2016-08-17 21:27:31 INFO  CommandRegistration:33 - User 213333 was successfully added
+2016-08-17 21:27:31 INFO  Controller:75 - Redirected to /bookmaker.jsp
+2016-08-17 21:27:43 INFO  Controller:62 - There was a class commands.CommandSetMultiplier instance returned
+2016-08-17 21:27:44 INFO  Controller:75 - Redirected to /bookmaker.jsp
+2016-08-18 08:49:05 INFO  Controller:62 - There was a class commands.CommandToRegistration instance returned
+2016-08-18 08:49:05 INFO  Controller:75 - Redirected to /registration.jsp
+2016-08-18 08:49:44 INFO  Controller:62 - There was a class commands.CommandToRegistration instance returned
+2016-08-18 08:49:44 INFO  Controller:75 - Redirected to /registration.jsp
+2016-08-18 08:50:12 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
+2016-08-18 08:50:13 INFO  Controller:75 - Redirected to /error.jsp
+2016-08-18 08:50:20 INFO  Controller:62 - There was a class commands.CommandLogin instance returned
+2016-08-18 08:50:20 INFO  CommandLogin:28 - The user Victoria has been successfully authorized as administrator
+2016-08-18 08:50:20 INFO  Controller:75 - Redirected to /admin.jsp
