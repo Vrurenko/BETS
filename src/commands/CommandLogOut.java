@@ -22,7 +22,7 @@ public class CommandLogOut implements ICommand {
         session.removeAttribute("usertype");
         session.removeAttribute("language");
         session.invalidate();
-        logger.info(user + "`s session was interrupted");
+        logger.info(user + "`s session has been interrupted");
         return page;
     }
 }

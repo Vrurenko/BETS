@@ -13,7 +13,6 @@ import javax.servlet.http.HttpSession;
 public class CommandLogin implements ICommand {
     private static final Logger logger = Logger.getLogger(CommandLogin.class);
 
-
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String page = null;
